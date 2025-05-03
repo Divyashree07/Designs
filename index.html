@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+        <!-- AOS Library -->
+        <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    </head>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sticky Navbar Example</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Basic Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+    }
+
+    h1, p {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Navbar Styles */
+    nav {
+      position: sticky; /* Sticky navbar */
+      top: 0; /* Stick to the top */
+      width: 100%;
+      background-color: #333;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 600;
+      padding: 10px;
+    }
+
+    nav a:hover {
+      color: #00bfff;
+    }
+
+    /* Main Section */
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 100px; /* Ensure content is below navbar */
+    }
+
+    /* Content Styling */
+    .content {
+      padding: 50px;
+      background-color: #f0f0f0;
+      width: 90%;
+      max-width: 1200px;
+      margin: 30px 0;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Scrollable Content */
+    .scroll-content {
+      height: 800px; /* Set height to make scrolling visible */
+      overflow-y: auto;
+    }
+
+    /* Scroll Down Indicator */
+    .scroll-indicator {
+      margin-top: 20px;
+      font-size: 24px;
+      color: #333;
+      cursor: pointer;
+      animation: bounce 1.5s infinite;
+    }
+
+    @keyframes bounce {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="container">
+    <h1>Namste!</h1>
+    <div class="scroll-indicator">
+      ⬇ Scroll Down ⬇
+    </div>
+    
+    <!-- Scrollable Content Section -->
+    <div class="scroll-content">
+      <div class="content">
+        <div class="about-me">
+            <h2>About Me</h2>
+            <div class="section" data-aos="fade-up" data-aos-delay="100">
+              <h3>Introduction</h3>
+              <p>Hi! I’m <strong>Divya Shri Soni</strong>, a passionate and dedicated engineering student currently studying IoT at MITS Gwalior...</p>
+            </div>
+            
+            <div class="section" data-aos="fade-up" data-aos-delay="200">
+              <h3>Education</h3>
+              <p>I completed my diploma with a focus on electronics before diving into engineering...</p>
+            </div>
+          
+            <div class="section" data-aos="fade-up" data-aos-delay="300">
+              <h3>Skills</h3>
+              <p>- **Programming Languages**: Java, C, C++, JavaScript, HTML, CSS, React, SQL, Python.</p>
+              <p>- **Frameworks/Technologies**: Spring Boot, IoT, Data Structures, Aptitude & Reasoning.</p>
+              <p>- **Soft Skills**: Leadership, Teamwork, Time Management, Communication.</p>
+            </div>
+          
+            <div class="section" data-aos="fade-up" data-aos-delay="400">
+              <h3>Experience</h3>
+              <p>- Developed a **Grocery Management System** using HTML, CSS, and JavaScript...</p>
+              <p>- Currently working on a project using **Spring Boot** and **Java** to create a **Hostel Hub** for students...</p>
+            </div>
+          
+            <div class="section" data-aos="fade-up" data-aos-delay="500">
+              <h3>Hobbies & Interests</h3>
+              <p>- Reading books on personal development, technology, and leadership...</p>
+              <p>- Yoga and fitness...</p>
+            </div>
+          
+            <div class="section" data-aos="fade-up" data-aos-delay="600">
+              <h3>Goals</h3>
+              <p>My primary goal is to secure a placement in a reputed company...</p>
+            </div>
+          </div>
+           </div>
+      <div class="content">
+        <h2>Services</h2>
+        <p>Our services include web design, development, SEO, and more. We create modern, responsive websites for all kinds of businesses.</p>
+      </div>
+      <div class="content">
+        <h2>Contact Us</h2>
+        <p>Feel free to reach out for any inquiries. We’d love to hear from you!</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
