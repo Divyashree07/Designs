@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Internship Application Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+  <div class="form-container">
+    <div class="header-img"></div>
+    <div class="form-content">
+      <h2>Internship Application</h2>
+      <label>Full Name <span class="required-star">*</span></label>
+      <input type="text" id="name" placeholder="Enter your full name" required>
+      <label>Contact Number <span class="required-star">*</span></label>
+      <input type="tel" id="phone" placeholder="Enter your contact number" required>
+      <label>Address</label>
+      <textarea id="address" placeholder="Enter your address here..."></textarea>
+      <label>Company Name</label>
+      <input type="text" id="company" placeholder="Enter company name (if any)">
+      <label>Email Address <span class="required-star">*</span></label>
+      <input type="email" id="email" placeholder="Enter your email address" required>
+      <label>Department <span class="required-star">*</span></label>
+      <select id="department" required>
+        <option value="">Select Department</option>
+        <option value="HR">HR</option>
+        <option value="Sales">Sales</option>
+        <option value="Development">Development</option>
+        <option value="Marketing">Marketing</option>
+        <option value="Others">Others</option>
+      </select>
+      <label>Gender <span class="required-star">*</span></label>
+      <div class="radio-group">
+        <label><input type="radio" name="gender" value="Male"> Male</label>
+        <label><input type="radio" name="gender" value="Female"> Female</label>
+        <label><input type="radio" name="gender" value="Prefer not to say"> Prefer not to say</label>
+      </div>
+      <label>Why do you want this internship?</label>
+      <textarea id="reason" placeholder="Explain why you want this internship..."></textarea>
+      <a href="submitted.html"><button class="submit-btn" id="submitBtn" >Submit</button></a>
+      <div class="toggle-mode">
+        <button class="toggle-btn" onclick="toggleDarkMode()" id="themeIcon">🌙</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $('#submitBtn').click(function() {
+      const name = $('#name').val();
+      const phone = $('#phone').val();
+      const email = $('#email').val();
+      const department = $('#department').val();
+      const gender = $('input[name="gender"]:checked').val();
+
+      if (!name || !phone || !email || !department || !gender) {
+        alert("Please fill all required fields (*)");
+      } else {
+        alert("Thank you, " + name + "! Your application has been submitted.");
+      }
+    });
+
+    function toggleDarkMode() {
+      const body = document.body;
+      const icon = document.getElementById('themeIcon');
+      body.classList.toggle('dark');
+
+      if (body.classList.contains('dark')) {
+        icon.textContent = "🌞";
+      } else {
+        icon.textContent = "🌙";
+      }
+    }
+
+    $('.custom-dropdown .options li').click(function () {
+      $('.custom-dropdown .options li').removeClass('selected');
+      $(this).addClass('selected');
+      const selectedText = $(this).text();
+      $('#departmentDropdown .selected').text(selectedText);
+      $('#department').val(selectedText);
+      $('.options').hide();
+    });
+  </script>
+
+</body>
+</html>
